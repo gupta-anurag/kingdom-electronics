@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'kingdom_electronics/home'
+  root 'kingdom_electronics#home'
 
   get 'kingdom_electronics/help'
 

@@ -1,4 +1,5 @@
 class KingdomElectronicsController < ApplicationController
+	
   def home
   end
 
