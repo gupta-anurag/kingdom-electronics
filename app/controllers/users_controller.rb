@@ -1,10 +1,12 @@
 class UsersController < ApplicationController
   def index
-  	@user = User.all
-  end
+  	@users = User.where(activated: FILL_IN).paginate(page: params[:page])
+   end
   	
   def show
     @user = User.find(params[:id])
+    @posts = @user.posts.paginate(page: params[:page])
+
   end
 
   def new

@@ -54,8 +54,9 @@ class PasswordResetsTest < ActionDispatch::IntegrationTest
           email: user.email,
           user: { password:              "foobaz",
                   password_confirmation: "foobaz" }
-    assert is_logged_in?
-    assert_not flash.empty?
-    assert_redirected_to user
+     assert_response :redirect
+    follow_redirect!
+    assert_match /FILL_IN/i, response.body
+
   end
 end
